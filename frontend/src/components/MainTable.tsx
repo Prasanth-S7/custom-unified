@@ -38,7 +38,7 @@ export default function MainTable() {
 
     useEffect(() => {
         const getPersonInfo = async () => {
-            const response = await axios.get("https://backend.prasanthsampath2005.workers.dev");
+            const response = await axios.get("https://backend1.oserver.workers.dev/");
             const data = response.data;
             setUserInfo(data);
         };
@@ -48,7 +48,7 @@ export default function MainTable() {
     useEffect(() => {
         if (selectedId !== 0 && cat) {
             const fetchMarks = async () => {
-                const response = await axios.get(`https://backend.prasanthsampath2005.workers.dev/fetchCatMarks/${selectedId}/${cat}`);
+                const response = await axios.get(`https://backend1.oserver.workers.dev/fetchCatMarks/${selectedId}/${cat}`);
                 const data = response.data;
                 setCatmarks(data);
             };
@@ -58,7 +58,7 @@ export default function MainTable() {
 
     useEffect(()=>{
         const fetchMarks = async () => {
-            const response = await axios.get(`https://backend.prasanthsampath2005.workers.dev/fetchAssignmentMarks/${selectedId}`);
+            const response = await axios.get(`https://backend1.oserver.workers.dev/${selectedId}`);
             const data = response.data;
             setAssignmentMarks(data);
         };
