@@ -58,7 +58,7 @@ export default function MainTable() {
 
     useEffect(()=>{
         const fetchMarks = async () => {
-            const response = await axios.get(`https://backend1.oserver.workers.dev/${selectedId}`);
+            const response = await axios.get(`https://backend1.oserver.workers.dev/fetchAssignmentMarks/${selectedId}`);
             const data = response.data;
             setAssignmentMarks(data);
         };
