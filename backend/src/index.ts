@@ -37,12 +37,9 @@ app.get('/fetchCatMarks/:id/:cat', async (c) => {
     const final_result = JSON.parse(result.d);
     const filtered_results = final_result.filter((obj: any) => {
       if (obj.EventTitle.includes(catNumber)) {
-        console.log(obj.EventTitle)
-        console.log(catNumber)
         return true;
       }
     })
-    console.log(filtered_results)
     return c.json(filtered_results)
 
   } catch (error) {
