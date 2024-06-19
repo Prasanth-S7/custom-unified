@@ -30,6 +30,11 @@ export default function MainTable() {
     const [userInfo, setUserInfo] = useState([]);
     const [position, setPosition] = useState("bottom");
 
+    const fetchid = ((index:number)=>{
+        if(index >= 21 ) return index+1;
+        else return index;
+    })
+
     const fetchCatMarks = async (id: number, cat: string) => {
         setCat(cat);
         setCatMarksClicked(true);
@@ -168,7 +173,7 @@ export default function MainTable() {
                                             <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
                                                 <DropdownMenuRadioItem
                                                     onClick={() => {
-                                                        fetchCatMarks(index + 33425, "cat1");
+                                                        fetchCatMarks(33425 + fetchid(index), "cat1");
                                                     }}
                                                     value="top"
                                                 >
@@ -176,7 +181,7 @@ export default function MainTable() {
                                                 </DropdownMenuRadioItem>
                                                 <DropdownMenuRadioItem
                                                     onClick={() => {
-                                                        fetchCatMarks(index + 33425, "cat2");
+                                                        fetchCatMarks(33425 + fetchid(index), "cat2");
                                                     }}
                                                     value="bottom"
                                                 >
@@ -184,7 +189,7 @@ export default function MainTable() {
                                                 </DropdownMenuRadioItem>
                                                 <DropdownMenuRadioItem
                                                     onClick={() => {
-                                                        fetchCatMarks(index + 33425, "cat3");
+                                                        fetchCatMarks(33425 + fetchid(index), "cat3");
                                                     }}
                                                     value="right"
                                                 >
@@ -197,7 +202,7 @@ export default function MainTable() {
                                 <span>
                                     <Button onClick={()=>{
                                         setAssignmentMarksClicked(true)
-                                        setSelectedId(index+33425)}} className="border-2 bg-blue-600 text-white rounded-md hover:text-black" variant="secondary">
+                                        setSelectedId(33425 + fetchid(index))}} className="border-2 bg-blue-600 text-white rounded-md hover:text-black" variant="secondary">
                                         Assignment
                                     </Button>
                                 </span>
